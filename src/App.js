@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Layout } from 'antd';
+import 'antd/dist/antd.css';
+
+// using ES6 modules
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
+const { Header, Footer, Sider, Content } = Layout;
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Layout>
+      <Header>Header</Header>
+      <Layout>
+        <Sider>Sider</Sider>
+        <Content>Content</Content>
+      </Layout>
+      <Footer>Footer</Footer>
+    </Layout>
+
   );
 }
 
