@@ -1,24 +1,8 @@
-import './App.css';
 import 'antd/dist/antd.css';
 
 import React from 'react';
 
 import { Form, Input, Button, Checkbox } from 'antd';
-
-
-// the frame
-let screenStyle = {
-	margin: 'auto',
-	width: '100%'
-}
-
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
 
 const onFinish = (values) => {
     console.log('Success:', values);
@@ -28,11 +12,15 @@ const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
 };
 
-class SignInCom extends React.Component {
+const inputStyle = {
+    width: '20rem'
+}
+
+class SignIn extends React.Component {
     render() {
 		return (
-			<Form
-                name="basic"
+			<Form name="basic"
+                style = {inputStyle}
                 labelCol={{
                     span: 8,
                 }}
@@ -89,12 +77,12 @@ class SignInCom extends React.Component {
                     }}
                 >
                     <Button type="primary" htmlType="submit">
-                    Submit
+                        Submit
                     </Button>
                 </Form.Item>
-                </Form>
-            );
+            </Form>
+        );
 	}
 }
 
-export default SignInCom;
+export default SignIn;

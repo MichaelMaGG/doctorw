@@ -1,73 +1,68 @@
 import './App.css';
 import 'antd/dist/antd.css';
 
+import logo from './common/images/logo512.png';
+
 import React from 'react';
 
 import { Layout } from 'antd';
-import { Carousel } from 'antd';
+import { Image } from 'antd';
 
-import { AccessCom } from './components/access/Access'
-
-const { Header, Footer, Sider, Content } = Layout;
+import Access from './components/access/Access'
 
 // the frame
-let screenStyle = {
-	margin: 'auto',
-	width: '100%'
+const contentStyle = {
+  display: 'flex',
+  minHeight: '100vh',
+  flexDirection: 'column'
+};
+
+const bodyStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'nowrap',
+  justifyContent: 'space-between',
+  width: '940px',
+  marginTop: '100px',
+  marginRight: '40px',
+  marginBottom: '20px',
+  marginLeft: '40px',
 }
 
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+const sideStyle = {
+  flex: '1',
+  flex: '0 0 12em',
+  marginRight: '40px'
+}
+
+const adStyle = {
+  flex: '1',
+}
+
+const signStyle = {
+  marginLeft: '22px',
+  marginBottom: '24px',
+  fontSize: '22px',
+  lineHeight: '28px'
+}
+
+const imageStyle = {
+  width: '450px',
+  marginLeft: '20px',
+}
 
 function App() {
   return (
-      <div style={contentStyle}>
-        <Layout>
-          <Header>Header</Header>
-          <Layout>
-            <Sider>
-              <AccessCom />
-            </Sider>
-            <Content>
-              <PicCarousel />
-            </Content>
-          </Layout>
-          <Footer>Footer</Footer>
-        </Layout>
-      </div>
+        <div style={bodyStyle}>
+          <div style={sideStyle}>
+            <div style={signStyle}>Sign in</div>
+            <Access />
+          </div>
+          <div style={adStyle}>
+          <Image style={imageStyle} src={logo} />
+          </div>
+        </div>
   );
-}
-
-class PicCarousel extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-		};
-  }
-
-	render() {
-		return (
-			<Carousel autoplay>
-        <div>
-          <h3 style={contentStyle}>1</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>2</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>3</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>4</h3>
-        </div>
-    </Carousel>
-		);
-	}
 }
 
 export default App;

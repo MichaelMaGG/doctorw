@@ -6,9 +6,14 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
+const loginStyle = {
+  display: 'flex',
+  justifyContent: 'center'
+}
+
 ReactDOM.render(
   <BrowserRouter>
-        <div>
+        <div style={loginStyle}>
           <Route path="/doctorw" component={App}/>
         </div>
     </BrowserRouter>,
