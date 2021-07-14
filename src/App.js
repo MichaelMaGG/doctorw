@@ -5,7 +5,6 @@ import logo from './common/images/logo512.png';
 
 import React from 'react';
 
-import { Layout } from 'antd';
 import { Image } from 'antd';
 
 import Access from './components/access/Access'
