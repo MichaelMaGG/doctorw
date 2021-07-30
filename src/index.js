@@ -5,7 +5,7 @@ import App from './App';
 import Error from './components/Error';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 const loginStyle = {
   display: 'flex',
@@ -15,9 +15,11 @@ const loginStyle = {
 ReactDOM.render(
   <BrowserRouter>
     <div style={loginStyle}>
-      <Route exact path="/" component={App}/>
-      <Route path="/doctorw" component={App}/>
-      <Route component={Error} />
+      <Switch>
+        <Route exact path="/" component={App}/>
+        <Route path="/doctorw" component={App}/>
+        <Route component={Error} />
+      </Switch>
     </div>
   </BrowserRouter>,
   document.getElementById('root')
