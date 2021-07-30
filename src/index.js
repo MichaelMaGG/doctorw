@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Error from './components/Error';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -13,10 +14,12 @@ const loginStyle = {
 
 ReactDOM.render(
   <BrowserRouter>
-        <div style={loginStyle}>
-          <Route path="/doctorw" component={App}/>
-        </div>
-    </BrowserRouter>,
+    <div style={loginStyle}>
+      <Route exact path="/" component={App}/>
+      <Route path="/doctorw" component={App}/>
+      <Route component={Error} />
+    </div>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
