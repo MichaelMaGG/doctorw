@@ -8,7 +8,10 @@ import { Alert } from 'antd';
 const contentStyle = {
     display: 'flex',
     justifyContent: 'center', /* horizontal center */
-    alignItems: 'center'      /* vertical center */
+    alignItems: 'center',      /* vertical center */
+    marginTop: '100px',
+	width: '61.8%',
+    height: '10rem',
 };
 
 class Error extends React.Component {
