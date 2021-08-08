@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Error from './components/Error';
+import Error from './components/error/Error';
+import CalendarCom from './components/CalendarCom';
+import Register from './components/access/Register';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -17,7 +19,9 @@ ReactDOM.render(
     <div style={loginStyle}>
       <Switch>
         <Route exact path="/" component={App}/>
-        <Route path="/doctorw" component={App}/>
+        <Route exact path="/doctorw" component={App}/>
+        <Route exact path="/calendar" component={CalendarCom}/>
+        <Route exact path="/register" component={Register}/>
         <Route component={Error} />
       </Switch>
     </div>
